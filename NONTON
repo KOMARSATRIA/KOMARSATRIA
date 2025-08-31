@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Streaming Video Online</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7eded;
+      color: #cebc19;
+    }
+
+    header {
+      background-color: #942121;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .video-player {
+      flex: 1 1 640px;
+      max-width: 800px;
+      margin: 10px;
+    }
+
+    .video-player video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .video-list {
+      flex: 1 1 300px;
+      margin: 10px;
+    }
+
+    .video-list h2 {
+      margin-top: 0;
+    }
+
+    .video-item {
+      background-color: #10d368;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .video-item:hover {
+      background-color: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  VDIO
+</header>
+
+<div class="container">
+  <div class="video-player">
+    <video id="mainVideo" controls>
+      <source src="video1.mp4" type="video/mp4">
+      Browser Anda tidak mendukung pemutar video.
+    </video>
+  </div>
+
+  <div class="video-list">
+    <h2>Daftar Video</h2>
+    <div class="video-item" onclick="changeVideo('video1.mp4')">Video 1: Judul Pertama</div>
+    <div class="video-item" onclick="changeVideo('video2.mp4')">Video 2: Judul Kedua</div>
+    <div class="video-item" onclick="changeVideo('video3.mp4')">Video 3: Judul Ketiga</div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Situs Streaming Video Sederhana
+</footer>
+
+<script>
+  function changeVideo(src) {
+    const video = document.getElementById('mainVideo');
+    video.src = src;
+    video.play();
+  }
+</script>
+
+</body>
+</html>
